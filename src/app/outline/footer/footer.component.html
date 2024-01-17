@@ -1,0 +1,20 @@
+<!-- footer.component.html -->
+
+<div class="footer">
+  <div class="subscribe">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Stay updated with our latest ideas on recipes.</p>
+    <div class="subscribe-form">
+      <input type="email" id="email" [(ngModel)]="email" />
+      <button (click)="subscribe($event)">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    <ul>
+      <li><a [routerLink]="['/about']">About Us</a></li>
+      <li><a [routerLink]="['/contact']">Contact Us</a></li>
+      <!-- Add more footer links as needed -->
+    </ul>
+  </div>
+</div>

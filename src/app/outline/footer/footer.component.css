@@ -1,0 +1,51 @@
+.footer {
+    background-color: #987341;
+    color: white;
+    padding: 20px;
+  }
+  
+  .subscribe {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .subscribe h3 {
+    margin-bottom: 10px;
+  }
+  
+  .subscribe p {
+    margin-bottom: 20px;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .subscribe-form input {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .subscribe-form button {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .footer-links li {
+    margin-right: 15px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }

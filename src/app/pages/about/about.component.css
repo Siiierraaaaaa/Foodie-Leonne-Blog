@@ -1,0 +1,16 @@
+.Bio{
+    display: flex;
+    align-items: center;
+    font-family: fantasy;
+    color: #543520;
+  }
+  .Bio img {
+    width: 350px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: Make the image circular */
+    margin-right: 20px; /* Adjust the margin between the image and bio */
+}
+.Bio .bioo {
+  flex-grow: 1;
+  font-family: fantasy;
+}

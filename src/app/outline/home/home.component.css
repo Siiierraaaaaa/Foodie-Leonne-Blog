@@ -1,0 +1,52 @@
+*{
+    background-color: #ffe4c4;
+    font-family: fantasy;
+}
+  .photo-container {
+    position: relative; /* Position relative for absolute positioning within */
+  }
+  .photo-container img{ 
+    width: 350px;
+    height: 300px;
+    position: relative; /* Position relative for absolute positioning within */
+
+  }
+  .photo-container img:hover {
+    transform: scale(1.05);
+  }
+  
+  .label {
+    position: absolute;
+    top: 85%; /* Adjust as needed to center vertically */
+    left: 43%; /* Adjust as needed to center horizontally */
+    transform: translate(-50%, -50%);
+    background-color: #987341 ;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer; /* Optional: Change cursor to pointer for interaction */
+  }
+  .container {
+    display: flex;
+  }
+  
+  .section {
+    display: flex; /* Use flexbox to create a flexible container for the section */
+  }
+  
+  .column1, .column2 {
+    flex: 1; /* Each column takes up equal space within the section */
+    padding: 20px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Optional: Add a border for visual separation */
+  }.container {
+    display: flex;
+  }
+  
+  .section {
+    display: flex; /* Use flexbox to create a flexible container for the section */
+  }
+  
+  .column1, .column2 {
+    flex: 1; /* Each column takes up equal space within the section */
+    padding: 20px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Optional: Add a border for visual separation */
+  }

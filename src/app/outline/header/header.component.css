@@ -1,0 +1,16 @@
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .newsletter {
+    background-color: #987341;
+    border: #543520 1px solid;
+    font-family: fantasy;
+    position: relative;
+    align-items: center;
+    display: flex;
+    color: white;
+    animation-iteration-count: infinite;
+  }

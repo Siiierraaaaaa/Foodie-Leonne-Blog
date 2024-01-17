@@ -1,0 +1,7 @@
+:host {
+    background-color: #fff8f0; /* This will set the background color for the entire app */
+    display: block; /* Ensures the style is applied to the host component */
+    height: 100%; /* Makes sure the background color covers the entire viewport */
+    font-family: fantasy;
+    color: #543520;
+  }

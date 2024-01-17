@@ -1,0 +1,14 @@
+<div class="category-container">
+    <h2 class="page-title">Recipe Categories</h2>
+  
+    <div class="category-list">
+      <div class="category-item" *ngFor="let category of categories">
+        <a routerLink="/recipes/{{ category.id }}">
+          <div class="category-thumbnail">
+            <img src="{{ category.image }}" alt="{{ category.name }}">
+          </div>
+          <div class="category-name">{{ category.name }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
