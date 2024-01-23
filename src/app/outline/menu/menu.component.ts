@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,11 +8,19 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
   categories = [
-    { id: 1, name: 'TikTok Dishes', image: 'assets/menu3.jpg' },
-    { id: 2, name: 'Dinner Ideas', image: 'assets/menu1.JPG' },
-    { id: 3, name: 'Nola Dishes', image: 'assets/coming soon.jpg' },
-    { id: 4, name: 'Appetizers', image: 'assets/menu6.png' },
-    { id: 5, name: 'Vegan Dishes', image: 'assets/coming soon.jpg' },
-    // Add more categories as needed
+    { id: 'nola', name: 'Nola', image: 'assets/coming soon.jpg' },
+    { id: 'Favs', name: 'Dinner Ideas', image: 'assets/menu1.JPG' },
+    { id: 'tiktok', name: 'TikTok Dishes', image: 'assets/menu3.jpg' },
+    { id: 'vegan', name: 'Vegan', image: 'assets/coming soon.jpg' },
+    { id: 'apps', name: 'Appetizers', image: 'assets/menu6.png' }
+
+
   ];
+
+  constructor(private router: Router) { }
+
+  goToComponent(category: string) {
+    // Navigate to the corresponding category component based on the category name
+    this.router.navigate([category]);
+  };
 }

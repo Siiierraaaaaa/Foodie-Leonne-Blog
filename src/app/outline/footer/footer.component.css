@@ -32,6 +32,7 @@
   .subscribe-form {
     display: flex;
     gap: 10px;
+    color: #543520;
   }
   
   .subscribe-form input {
@@ -41,7 +42,7 @@
   
   .subscribe-form button {
     background-color: #fff;
-    color: #333;
+    color: #543520;
     padding: 10px;
     cursor: pointer;
   }
@@ -59,4 +60,14 @@
   .footer-links a {
     color: #fff;
     text-decoration: none;
+  }
+
+ 
+  .social-media-icons {
+    color: #543520; /* Set the color you want for social media icons */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .social-media-icons:hover {
+    color: white; /* Set the hover color for social media icons */
   }
