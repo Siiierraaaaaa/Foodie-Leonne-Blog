@@ -5,12 +5,16 @@ import { HomeComponent } from './outline/home/home.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { DessertComponent } from './pages/dessert/dessert.component';
 import { FavsComponent } from './pages/favs/favs.component';
-import { FamilyFavsComponent } from './pages/family-favs/family-favs.component';
+import { FamilyFavsComponent } from './pages/quick dinner/family-favs.component';
 import { ResturantsComponent } from './pages/resturants/resturants.component';
 import { FooterComponent } from './outline/footer/footer.component';
 import { NavComponent } from './outline/nav/nav.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MenuComponent } from './outline/menu/menu.component';
+import { TiktokComponent } from './pages/tiktok/tiktok.component';
+import { AppsComponent } from './pages/apps/apps.component';
+import { VeganComponent } from './pages/vegan/vegan.component';
+import { NolaComponent } from './pages/nola/nola.component';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent}, // Display HeaderComponent on the empty path
@@ -24,6 +28,10 @@ const routes: Routes = [
   { path: 'Nav', component: NavComponent},
   { path: 'About', component: AboutComponent},
   { path: 'menu', component: MenuComponent},
+  { path: 'tiktok', component: TiktokComponent},
+  { path: 'apps', component: AppsComponent},
+  { path: 'vegan', component: VeganComponent},
+  { path: 'nola', component: NolaComponent}
 
 ];
 

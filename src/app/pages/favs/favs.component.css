@@ -1,0 +1,41 @@
+.recipe-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .recipe {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .rating i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .comments {
+    margin-top: 15px;
+  }
+  
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

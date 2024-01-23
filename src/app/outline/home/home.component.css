@@ -50,3 +50,22 @@
     padding: 20px; /* Adjust padding as needed */
     border: 1px solid #ddd; /* Optional: Add a border for visual separation */
   }
+  .social-media{
+    color: #987341
+  }
+  .fa-instagram {
+    font-size: 44px;
+    padding-right: 15px;
+  }
+  .fa-twitter {
+    font-size: 44px;
+    padding-right: 15px;
+  }
+  .fa-facebook {
+    font-size: 44px;
+    padding-right: 15px;
+  }
+  .fa-tiktok {
+    font-size: 44px;
+    padding-right: 15px; 
+  }
