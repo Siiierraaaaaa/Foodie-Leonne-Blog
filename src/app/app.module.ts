@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './outline/header/header.component';
 import { HomeComponent } from './outline/home/home.component';
-import { FamilyFavsComponent } from './pages/quick dinner/family-favs.component';
 import { FavsComponent } from './pages/favs/favs.component';
 import { ResturantsComponent } from './pages/resturants/resturants.component';
 import { DessertComponent } from './pages/dessert/dessert.component';
@@ -24,13 +23,14 @@ import { AppsComponent } from './pages/apps/apps.component';
 import { TiktokComponent } from './pages/tiktok/tiktok.component';
 import { VeganComponent } from './pages/vegan/vegan.component';
 import { NolaComponent } from './pages/nola/nola.component';
+import { QuickdinnerComponent } from './pages/quickdinner/quickdinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FamilyFavsComponent,
+    QuickdinnerComponent,
     FavsComponent,
     ResturantsComponent,
     DessertComponent,
