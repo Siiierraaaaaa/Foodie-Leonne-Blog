@@ -1,6 +1,6 @@
 // footer.component.ts
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Event } from '@angular/router';
 import { SubscribeService } from '../../sevices/subscribe.service'; // Adjust the path based on your project structure
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -10,13 +10,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent {
-  subscribeForm: FormGroup;
+export class FooterComponent implements OnInit{
+  currentYear: number = new Date().getFullYear();  subscribeForm: FormGroup;
 
   constructor(private fb: FormBuilder, private subscribeService: SubscribeService) {
 this.subscribeForm = this.fb.group ({
   email: ['', [Validators.required, Validators.email]]
 });
+  }
+  ngOnInit() {
+    
   }
 
   onSubmit() {

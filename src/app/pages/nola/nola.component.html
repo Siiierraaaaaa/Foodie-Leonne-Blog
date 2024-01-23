@@ -1,1 +1,22 @@
-<p>nola works!</p>
+<!-- recipes.component.html -->
+
+<div class="recipe-gallery">
+    <div class="recipe" *ngFor="let recipe of recipes">
+      <img [src]="recipe.imageUrl" alt="{{ recipe.name }}">
+      <h3>{{ recipe.name }}</h3>
+      <div class="rating">
+        <span *ngFor="let star of stars; let i = index" (click)="rateRecipe(recipe, i + 1)">
+          <i [class]="i < recipe.rating ? 'fas fa-star' : 'far fa-star'"></i>
+        </span>
+      </div>
+      <p>{{ recipe.description }}</p>
+      <div class="comments">
+        <div *ngFor="let comment of recipe.comments">
+          <p>{{ comment.text }}</p>
+        </div>
+        <textarea [(ngModel)]="newComment" placeholder="Leave a comment"></textarea>
+        <button (click)="addComment(recipe)">Add Comment</button>
+      </div>
+    </div>
+  </div>
+  

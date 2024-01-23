@@ -1,22 +1,33 @@
-.footer {
+
+  .footer {
     background-color: #987341;
     color: white;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
   }
   
-  .subscribe {
-    max-width: 600px;
-    margin: 0 auto;
+  .logo {
+    flex: 1; /* Occupy available space */
     text-align: center;
   }
   
-  .subscribe h3 {
-    margin-bottom: 10px;
+  .logo img {
+    max-width: 100%; /* Ensure the logo doesn't exceed its container */
+    height: auto;
   }
   
-  .subscribe p {
-    margin-bottom: 20px;
+  .section1, .section2 {
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  
+  /* ... (rest of your styles) */
+  
   
   .subscribe-form {
     display: flex;
