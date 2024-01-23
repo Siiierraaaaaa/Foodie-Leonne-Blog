@@ -10,7 +10,7 @@ export class HomeComponent {
 
   categories = [
     'Dessert',
-    'Family',
+    'quickdinner',
     'Resturants',
   ];
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-nola',
@@ -20,8 +21,8 @@ export class NolaComponent {
     },
     // Add more recipe objects with their details
   ];
-
-  newComment = '';
+  newComment: string = '';
+  
 
   rateRecipe(recipe: any, rating: number) {
     recipe.rating = rating;

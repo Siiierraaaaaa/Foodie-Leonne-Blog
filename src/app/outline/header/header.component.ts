@@ -5,19 +5,19 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations: [
-    trigger('moveBanner', [
-      transition('* <=> *', [
-        animate('22000ms', keyframes([
-          style({ transform: 'translateX(100%)' }),
-          style({ transform: 'translateX(-100%)' }),
-          style({ transform: 'translateX(100%)' }),
-          style({ transform: 'translateX(-100%)' }),
-          // Add more keyframes as needed
-        ]))
-      ]),
-    ]),
-  ],
+  // animations: [
+  //   trigger('moveBanner', [
+  //     transition('* <=> *', [
+  //       animate('22000ms', keyframes([
+  //         style({ transform: 'translateX(100%)' }),
+  //         style({ transform: 'translateX(-100%)' }),
+  //         style({ transform: 'translateX(100%)' }),
+  //         style({ transform: 'translateX(-100%)' }),
+          
+  //       ]))
+  //     ]),
+  //   ]),
+  // ],
 })
 export class HeaderComponent implements OnInit {
   elements: any[] = []; // Replace 'any[]' with the actual type of your elements
