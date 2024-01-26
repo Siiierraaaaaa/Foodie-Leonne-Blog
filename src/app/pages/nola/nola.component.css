@@ -1,4 +1,18 @@
 /* recipes.component.css */
+/* nola.component.css */
+
+.nola-background {
+  /* background-image: url('assets/NolaBG.png'); */
+  background-size: cover; /* Adjust the size to cover the entire background */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  min-height: 100vh; /* Set a minimum height to cover the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Set text color for better visibility */
+}
 
 .recipe-gallery {
     display: flex;

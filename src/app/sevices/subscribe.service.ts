@@ -1,25 +1,27 @@
+// subscribe.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SubscribeService {
-  private apiUrl = 'http://localhost:3000'; // Backend endpoint
+  private baseUrl = 'http://localhost:3000'; // Replace with your backend server URL
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   subscribe(email: string): Observable<any> {
+    const url = `${this.baseUrl}/subscribe`;
 
-    return this.http.post(`${this.apiUrl}/subscribe`, { email });
-    // You can send a POST request to your backend or email service provider here
-    // Example:
-    // return this.http.post(`${this.apiUrl}/subscribe`, { email });
+    // Headers to set content type to JSON
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    // Request body
+    const body = { email };
+
+    return this.http.post(url, body, { headers });
   }
-
-  // subscribe(email: string) {
-  //   return this.http.post(this.apiUrl, { email });
-  // }
-  
 }

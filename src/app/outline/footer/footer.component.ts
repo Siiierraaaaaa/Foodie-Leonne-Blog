@@ -10,28 +10,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent implements OnInit{
-  currentYear: number = new Date().getFullYear();  subscribeForm: FormGroup;
+export class FooterComponent implements OnInit {
+  currentYear: number = new Date().getFullYear(); subscribeForm: FormGroup;
 
   constructor(private fb: FormBuilder, private subscribeService: SubscribeService) {
-this.subscribeForm = this.fb.group ({
-  email: ['', [Validators.required, Validators.email]]
-});
+    this.subscribeForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
   }
   ngOnInit() {
-    
+
   }
 
   onSubmit() {
+    console.log('Form submitted!');
     if (this.subscribeForm.valid) {
-      const email = this.subscribeForm!.get('email')!.value;
+      const email = this.subscribeForm.get('email')!.value;
       this.subscribeService.subscribe(email).subscribe(
-        response => {
+        (response) => {
           // Handle successful subscription
           console.log('Subscription successful!', response);
         },
-        error => {
-          // Handle subscription error
+        (error) => {
+          // Log the full error object for more details
           console.error('Subscription failed!', error);
         }
       );

@@ -22,6 +22,8 @@ import { VeganComponent } from './pages/vegan/vegan.component';
 import { NolaComponent } from './pages/nola/nola.component';
 import { LayoutComponent } from './outline/layout/layout.component';
 import { QuickdinnerComponent } from './pages/quickdinner/quickdinner.component';
+import { SubscribeService } from './sevices/subscribe.service';
+import { RecipeService } from './sevices/recipes.service';
 
 
 
@@ -80,6 +82,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     // Other modules...
   ],
+  providers: [SubscribeService, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

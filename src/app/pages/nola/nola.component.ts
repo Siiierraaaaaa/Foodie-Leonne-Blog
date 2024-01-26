@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RecipeService } from 'src/app/sevices/recipes.service';
 
 @Component({
   selector: 'app-nola',
@@ -8,19 +9,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class NolaComponent {
   stars = [1, 2, 3, 4, 5];
-  recipes = [
-    {
-      name: 'Recipe 1',
-      imageUrl: 'path/to/recipe1.jpg',
-      description: 'Description of Recipe 1',
-      rating: 4,
-      comments: [
-        { text: 'Great recipe!' },
-        { text: 'I loved it!' },
-      ],
-    },
+  
+  // recipes = [
+  //   {
+  //     name: 'Recipe 1',
+  //     imageUrl: 'path/to/recipe1.jpg',
+  //     description: 'Description of Recipe 1',
+  //     rating: 4,
+  //     comments: [
+  //       { text: 'Great recipe!' },
+  //       { text: 'I loved it!' },
+  //     ],
+  //   },
     // Add more recipe objects with their details
-  ];
+  // ];
   newComment: string = '';
   
 
