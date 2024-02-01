@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const RecipeController = require('./controllers/recipe.controller');
-const Recipe = require('./models/recipe.model');
+const RecipeController = require('./recipe.controller');
+const Recipe = require('./recipe.model');
 require('dotenv').config();
 
 const app = express();
@@ -34,7 +34,7 @@ db.once('open', () => {
   seedDatabase();
 });
 
-function seedDatabase() {
+async function seedDatabase() {
   const sampleRecipes = [
     {
       name: 'Recipe 1',
@@ -49,7 +49,7 @@ function seedDatabase() {
     // Add more sample recipes as needed
   ];
 
-  Recipe.insertMany(sampleRecipes, (error, recipes) => {
+  await Recipe.insertMany(sampleRecipes, (error, recipes) => {
     if (error) {
       console.error('Error seeding database:', error);
     } else {
@@ -67,9 +67,10 @@ app.use('/', admin);
 
 
 const recipeController = require('./recipe.controller');
-app.get('/api/recipes', RecipeController.getAllRecipes);
-app.put('/api/recipes/:id/rating', RecipeController.updateRecipeRating);
-app.post('/api/recipes/:id/comments', RecipeController.addCommentToRecipe);
+
+app.get('/api/recipes', recipeController.getAllRecipes);
+app.put('/api/recipes/:id/rating', recipeController.updateRecipeRating);
+app.post('/api/recipes/:id/comments', recipeController.addCommentToRecipe);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);

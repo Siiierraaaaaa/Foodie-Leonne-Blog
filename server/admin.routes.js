@@ -1,22 +1,14 @@
+// admin.routes.js
 const express = require('express');
 const router = express.Router();
 
+const adminController = require('./admin.controller');
 
-router.get('/admin', async (req, res) => {
-try{
-    const locals = {
-        title: "Admin",
-        description: "TheFoodieLeonneAdmin"
-    }
+// Define your admin routes here
+router.post('/api/admin/posts', adminController.addPost);
+router.delete('/api/admin/posts/:id', adminController.deletePost);
+router.put('/api/admin/posts/:id', adminController.updatePost);
 
-    res.render('admin/index', {locals, data});
-} catch(error) {
-    console.log(error);
-}
-})
-
-
-
-
+router.delete('/api/admin/comments/:id', adminController.deleteComment);
 
 module.exports = router;

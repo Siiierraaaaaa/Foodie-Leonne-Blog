@@ -1,4 +1,6 @@
-const Recipe = require('../models/recipe.model');
+const express = require('express');
+const router = express.Router();
+const Recipe = require('./recipe.model');
 
 // Get all recipes
 exports.getAllRecipes = async (req, res) => {

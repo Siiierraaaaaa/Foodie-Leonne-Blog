@@ -15,6 +15,14 @@ import { AppsComponent } from './pages/apps/apps.component';
 import { VeganComponent } from './pages/vegan/vegan.component';
 import { NolaComponent } from './pages/nola/nola.component';
 import { QuickdinnerComponent } from './pages/quickdinner/quickdinner.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from '../app/admin/auth.guard';
+import { AddPostComponent } from './admin/add-post/add-post.component';
+import { UpdatePostComponent } from './admin/update-post/update-post.component';
+import { ManageCommentsComponent } from './admin/manage-comments/manage-comments.component';
+import { DeletePostComponent } from './admin/delete-post/delete-post.component';
+import { LoginComponent } from './admin/login/login.component';
+
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent}, // Display HeaderComponent on the empty path
@@ -31,7 +39,14 @@ const routes: Routes = [
   { path: 'apps', component: AppsComponent},
   { path: 'vegan', component: VeganComponent},
   { path: 'nola', component: NolaComponent},
-  {path: 'quickdinner', component:QuickdinnerComponent}
+  {path: 'quickdinner', component:QuickdinnerComponent},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
+      { path: 'add-post', component: AddPostComponent },
+      { path: 'delete-post', component: DeletePostComponent },
+      { path: 'update-post', component: UpdatePostComponent },
+      { path: 'manage-comments', component: ManageCommentsComponent },
+      { path: 'login', component: LoginComponent },
+  ]},
 
 ];
 
