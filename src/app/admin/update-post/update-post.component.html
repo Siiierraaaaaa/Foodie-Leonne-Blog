@@ -1,1 +1,15 @@
-<p>update-post works!</p>
+
+<div>
+    <label for="recipeId">Recipe ID:</label>
+    <input type="text" id="recipeId" [(ngModel)]="recipeId" required>
+    
+    <label for="updatedName">Updated Recipe Name:</label>
+    <input type="text" id="updatedName" [(ngModel)]="updatedRecipe.name" required>
+  
+    <label for="updatedDescription">Updated Recipe Description:</label>
+    <textarea id="updatedDescription" [(ngModel)]="updatedRecipe.description" required></textarea>
+  
+    <!-- Add more input fields for other properties based on your Recipe model -->
+  
+    <button (click)="updateRecipe()">Update Recipe</button>
+  </div>

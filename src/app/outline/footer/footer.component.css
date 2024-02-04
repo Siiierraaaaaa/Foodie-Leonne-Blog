@@ -62,12 +62,26 @@
     text-decoration: none;
   }
 
- 
-  .social-media-icons {
-    color: #543520; /* Set the color you want for social media icons */
-    text-decoration: none; /* Remove underline */
+  .email{
+    color: #fff;
   }
-  
-  .social-media-icons:hover {
-    color: white; /* Set the hover color for social media icons */
-  }
+
+ .social-media{
+  color: #543520
+}
+.fa-instagram {
+  font-size: 25px;
+  padding-right: 8px;
+}
+.fa-twitter {
+  font-size: 25px;
+  padding-right: 8px;
+}
+.fa-facebook {
+  font-size: 25px;
+  padding-right: 8px;
+}
+.fa-tiktok {
+  font-size: 25px;
+  padding-right: 8px; 
+}

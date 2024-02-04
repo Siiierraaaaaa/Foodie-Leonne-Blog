@@ -1,1 +1,12 @@
-<p>add-post works!</p>
+ <form (submit)="addRecipe()">
+    <label for="name">Recipe Name:</label>
+    <input type="text" id="name" [(ngModel)]="recipeName" required>
+  
+    <label for="description">Recipe Description:</label>
+    <textarea id="description" [(ngModel)]="recipeDescription" required></textarea>
+  
+    
+  
+    <button type="submit">Add Recipe</button>
+  </form> 
+  

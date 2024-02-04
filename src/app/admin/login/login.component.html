@@ -1,5 +1,5 @@
 <div>
-    <h2>Login</h2>
+    <h2>TheFoodieLeonne Login</h2>
     <form (ngSubmit)="onSubmit()">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" [(ngModel)]="username" required>
@@ -9,5 +9,9 @@
   
       <button type="submit">Login</button>
     </form>
+    <!-- Display an error message if authentication fails -->
+    <div *ngIf="loginError" class="error-message">
+      Authentication failed. Please check your username and password.
+    </div>
   </div>
   

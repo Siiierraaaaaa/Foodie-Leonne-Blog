@@ -1,6 +1,6 @@
 // logout.component.ts
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../sevices/auth.service';
 
 @Component({
   selector: 'app-logout',

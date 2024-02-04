@@ -24,6 +24,9 @@ import { LayoutComponent } from './outline/layout/layout.component';
 import { QuickdinnerComponent } from './pages/quickdinner/quickdinner.component';
 import { SubscribeService } from './sevices/subscribe.service';
 import { RecipeService } from './sevices/recipes.service';
+import { AdminComponent } from './admin/admin.component';
+import { AdminService } from './sevices/admin.service';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -36,10 +39,11 @@ const routes: Routes = [
       { path: 'header', component: HeaderComponent }, 
       { path: 'Footer', component: FooterComponent },
       { path: 'Nav', component: NavComponent },
-      { path: 'About', component: AboutComponent },
+      { path: 'about', component: AboutComponent },
       { path: 'menu', component: MenuComponent },    
     ]
   },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'Pop-Up', component: PopUpComponent },
   { path: 'Dessert', component: DessertComponent },
   { path: 'Favs', component: FavsComponent },
@@ -71,6 +75,8 @@ const routes: Routes = [
     NolaComponent,
     LayoutComponent,
     QuickdinnerComponent,
+    AdminComponent,
+    
   ],
   imports: [
     
@@ -80,9 +86,11 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    AdminModule
     // Other modules...
   ],
-  providers: [SubscribeService, RecipeService],
+  exports: [RouterModule],
+  providers: [SubscribeService, RecipeService, AdminService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

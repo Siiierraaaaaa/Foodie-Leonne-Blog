@@ -11,8 +11,8 @@
     </div>
     <div class="footer-links">
       <ul>
-        <li><a [routerLink]="['/about']">About Us</a></li>
-        <li><a [routerLink]="['/contact']">Contact Us</a></li>
+        <li><a [routerLink]="['/About']">About Us</a></li>
+        <li><a [routerLink]="['/admin']">Admin</a></li>
 
       </ul>
     </div>
@@ -25,20 +25,35 @@
 
   <div class="section2">
     <div class="contact-info">
-      <p>Email: <a href="mailto:thefoodieleonne@gmail.com">thefoodieleonne@gmail.com</a></p>
+      <p>Email: <a id="email" href="mailto:thefoodieleonne@gmail.com">thefoodieleonne@gmail.com</a></p>
     </div>
 
     <div class="copyright">
       <p>&copy; {{ currentYear }} TheFoodieLeonne. All rights reserved.</p>
     </div>
 
-    <div class="social-media-icons">
-      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com"><i class="fab fa-tiktok"></i></a>
-      <!-- Add more social media icons as needed -->
-    </div>
+    <div class="social-media">
+
+      <a href="https://www.instagram.com/the.foodieleonne" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram social-media"></i>
+      </a>
+
+
+      <a href="https://twitter.com/your_username" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter social-media"></i>
+      </a>
+
+
+      <a href="https://www.facebook.com/your_page" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook social-media"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/@your_username" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-tiktok social-media"></i>
+      </a>
+
+  </div>
+
   </div>
 
 </div>

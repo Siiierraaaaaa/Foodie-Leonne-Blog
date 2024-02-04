@@ -16,7 +16,7 @@ import { VeganComponent } from './pages/vegan/vegan.component';
 import { NolaComponent } from './pages/nola/nola.component';
 import { QuickdinnerComponent } from './pages/quickdinner/quickdinner.component';
 import { AdminComponent } from './admin/admin.component';
-import { AuthGuard } from '../app/admin/auth.guard';
+import { AuthGuard } from './sevices/auth.guard';
 import { AddPostComponent } from './admin/add-post/add-post.component';
 import { UpdatePostComponent } from './admin/update-post/update-post.component';
 import { ManageCommentsComponent } from './admin/manage-comments/manage-comments.component';
@@ -33,25 +33,20 @@ const routes: Routes = [
   { path: 'Resturants', component: ResturantsComponent },
   { path: 'Footer', component: FooterComponent},
   { path: 'Nav', component: NavComponent},
-  { path: 'About', component: AboutComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'menu', component: MenuComponent},
   { path: 'tiktok', component: TiktokComponent},
   { path: 'apps', component: AppsComponent},
   { path: 'vegan', component: VeganComponent},
   { path: 'nola', component: NolaComponent},
   {path: 'quickdinner', component:QuickdinnerComponent},
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
-      { path: 'add-post', component: AddPostComponent },
-      { path: 'delete-post', component: DeletePostComponent },
-      { path: 'update-post', component: UpdatePostComponent },
-      { path: 'manage-comments', component: ManageCommentsComponent },
-      { path: 'login', component: LoginComponent },
-  ]},
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+  RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

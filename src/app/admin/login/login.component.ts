@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../sevices/auth.service';
+import { AdminService } from 'src/app/sevices/admin.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  loginError: boolean = false; // New property to track login errors
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private adminService: AdminService, private router: Router) {}
 
   onSubmit() {
     // Simulate authentication (replace with your actual authentication logic)
@@ -21,7 +23,8 @@ export class LoginComponent {
       // Redirect to the admin page upon successful login
       this.router.navigate(['/admin']);
     } else {
-      // Display an error message or handle the failed login scenario
+      // Set loginError to true to display the error message
+      this.loginError = true;
       console.error('Authentication failed');
     }
   }

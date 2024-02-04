@@ -1,1 +1,10 @@
-<p>delete-post works!</p>
+<!-- delete-post.component.html -->
+
+<h2>Delete Recipe</h2>
+
+<div>
+  <label for="recipeId">Recipe ID:</label>
+  <input type="text" id="recipeId" [(ngModel)]="recipeId" required>
+  
+  <button (click)="deleteRecipe(recipeId)">Delete Recipe</button>
+</div>

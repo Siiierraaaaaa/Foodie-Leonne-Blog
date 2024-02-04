@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const RecipeController = require('./recipe.controller');
 const Recipe = require('./recipe.model');
 require('dotenv').config();
+app.use('/api', require('./admin.routes'));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -56,14 +57,34 @@ async function seedDatabase() {
       console.log('Database seeded with sample recipes:', recipes);
     }
   });
-}
+  app.get('/api/recipes', async (req, res) => {
+    try {
+      const recipes = await Recipe.find();
+      res.json(recipes);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
+  app.get('/api/recipes/:category', async (req, res) => {
+    const { category } = req.params;
+});
+app.post('/api/recipes', async (req, res) => {
+  const { name, imagePath, description, category } = req.body;
 
-// Import routes
+  try {
+    const newRecipe = new Recipe({ name, imagePath, description, category });
+    await newRecipe.save();
+    res.status(201).json(newRecipe);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 const emailRoutes = require('./email.routes');
 app.use('/', emailRoutes);
 
-const admin = require('./admin.routes')
-app.use('/', admin);
+
 
 
 const recipeController = require('./recipe.controller');
@@ -75,3 +96,4 @@ app.post('/api/recipes/:id/comments', recipeController.addCommentToRecipe);
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+}
